@@ -1,6 +1,6 @@
 	
 
-confirmStitching(){	
+confirmStitching(analyzerWinId){	
 	WinWaitActive, Image Stitch
 	; MsgBox Clicking on OK button
 	ControlClick, WindowsForms10.BUTTON.app.0.1ca0192_r6_ad15, Image Stitch, , LEFT, , , , NA 
@@ -9,12 +9,12 @@ confirmStitching(){
 	WinWaitClose, Load a Group.
 
 	; Wait until active for 30 seconds, then force activation
-    WinWaitActive BZ-X800 Analyzer, , 30000
+    WinWaitActive, ahk_id %analyzerWinId%, , 300
 	; MsgBox, Closed all windows and back to analyzer
-	WinActivate BZ-X800 Analyzer
+	WinActivate ahk_id %analyzerWinId%
 }
 
-cancelStitching(){	
+cancelStitching(){
 	WinWait, Load a Group.
 	
 	;No stitching output for BZ-X800 Analyzer:

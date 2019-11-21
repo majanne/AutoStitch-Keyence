@@ -2,6 +2,8 @@
 
 exportTiff(outputDirName, currentName, channel)
 {
+	outputFile := outputDirName "\" currentName "_" channel
+
 	; The active window
 	topId := winExist("A")
 
@@ -23,18 +25,43 @@ exportTiff(outputDirName, currentName, channel)
     Send {Enter}
     Sleep 500
 
-	; Wait for save as. Paste file name and hit enter
-	WinWaitActive, Save As
-	saveasWinId := winExist("A")
+	; Wait for Save dialog
+	WinWaitActive, Save As, , 15,
+	WinActivate, Save As
 	sleep 500
-	sendClipboard(outputDirName "\" currentName "_" channel)
-    Send {Enter}						
-    Sleep 2000
+	saveWinId := WinExist("A")
+
+	;Sequence to send filename
+	ControlFocus, Edit1, ahk_id %saveWinId%,
+	Sleep 500
+	ControlSetText, Edit1, %outputFile%, ahk_id %saveWinId%, 
+
+	; Clicking Save
+	ControlFocus, Button2, ahk_id %saveWinId%,
+	Sleep 500
+	ControlGetText, buttonText, Button2, ahk_id %saveWinId%,
+	if (buttonText != "&Save") {
+		MsgBox "saveTiffSmall(): Could not find save button. Exiting ..."
+		ExitApp
+	}
+	Send {Enter}
+	Sleep 500
+	
+	WinWaitClose, ahk_id %saveWinId%,, 120
+	if (ErrorLevel) {
+		MsgBox "exportTiff(): Timed out waiting for save dialog to close. Exiting ..."
+		ExitApp
+	}
+	
 	
 	; Wait for all windows to close
-	WinWaitClose, ahk_id %saveasWinId%
-	WinWaitClose, ahk_class %exportWinId%
+	WinWaitClose, ahk_class %exportWinId%,, 300
+	if (ErrorLevel) {
+		MsgBox "exportTiff(): Timed out waiting for export dialog to close. Exiting ..."
+		ExitApp
+	}
 	
+	; Close the overview Window
 	WinActivate, Overview Window
 	WinClose, Overview Window
 	

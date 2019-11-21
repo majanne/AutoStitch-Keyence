@@ -37,19 +37,24 @@ runStitching(inputDirPath, currentName, outputDirPath, options, imageInfo) {
 
 ;--------------------------------------------------------------------------------------
 ;@ Window: Load a Group.
-	WinWait, Load a Group., , 5, , 
+	WinWaitActive, Load a Group., , 6,
+	if (ErrorLevel) {
+		MsgBox, Timed out waiting for "Load a Group" window. Exiting ...
+		ExitApp
+	}
 	
 	; Enter the path to the input file
 	ControlFocus, Edit1, Load a Group.  ; Select address bar
-	Send ^a                             ; Select all text
-	Sleep 500
-	sendClipboard(inputDirPath)         ; Paste the input dir path
+	Sleep 250
+	ControlSetText, Edit1, %inputDirPath%, Load a Group.,
+	Sleep 250
 	Send {Enter}                        ; Enter will load the preview
 	Sleep 3000                          ; Wait
 	if (WinExist("Loading")) {
 		WinWaitClose, Loading
 	}
-	WinWaitActive, Load a Group. , , 3000     ; Wait
+	WinWaitActive, Load a Group., , 3000     ; Wait
+	WinActivate, Load a Group.
 	
 	;Get all the image channels
 	; return in the order they will be processed, overlay first
@@ -171,11 +176,15 @@ runStitching(inputDirPath, currentName, outputDirPath, options, imageInfo) {
 
 ;--------------------------------------------------------------------------------------
 ;@ Window: Image Stitch   
-	confirmStitching()			
+	confirmStitching(analyzerWinId)			
 
 ;--------------------------------------------------------------------------------------	
 ;@ Window: BZ-X800 Analyzer
-	WinWaitActive, ahk_id %analyzerWinId%
+	WinWaitActive, ahk_id %analyzerWinId%, , 30
+	if (ErrorLevel) {
+		MsgBox, Timed out waiting after confirming stitching. Exiting ...
+		ExitApp
+	}
 	
 	hasSizeInfo := False
 	scaleBar := options["insertScale"]
@@ -192,6 +201,8 @@ runStitching(inputDirPath, currentName, outputDirPath, options, imageInfo) {
 			imageInfo["imageHum"] := imageH * calibration
 			imageInfo["calibration"] := calibration
 		}
+		WinWaitActive, ahk_id %analyzerWinId%, , 5
+		WinActivate, ahk_id %analyzerWinId%
 	
 		; Add scale bar
 		scaleBar := options["insertScale"]
@@ -201,24 +212,40 @@ runStitching(inputDirPath, currentName, outputDirPath, options, imageInfo) {
 			setCanvas()
 			addScaleBar(calibration, imageW, imageH, zoom, options)
 		}
+		WinWaitActive, ahk_id %analyzerWinId%, , 5
+		WinActivate, ahk_id %analyzerWinId%
+		
 		; Save
 		if (isInList("JPEG", userFormats)) {
 			saveJpg(outputDirPath, currentName, channel)
 		}
 		if (isInList("TIFF compressed", userFormats)) {
-			saveTiffSmall(outputDirPath, currentName, channel)
-			closeImage()	
+			saveTiffSmall(outputDirPath, currentName, channel, analyzerWinId)
+			closeImage(analyzerWinId)
 		} else {
 			doNotSaveTiffSmall()			
 		}
+		WinWaitActive, ahk_id %analyzerWinId%, , 5
+		WinActivate, ahk_id %analyzerWinId%
 	}
 
 	; Close the program
+	WinWaitActive, ahk_id %analyzerWinId%, , 5
 	WinActivate, ahk_id %analyzerWinId%
-	WinWaitActive, ahk_id %analyzerWinId%
 	Sleep 500
 	WinClose, ahk_id %analyzerWinId%
-	WinWaitClose, ahk_id %analyzerWinId%
+	WinWaitClose, ahk_id %analyzerWinId%,, 30
+	if (ErrorLevel) {
+		; Retry
+		WinActivate, ahk_id %analyzerWinId%
+		Sleep 500
+		WinClose, ahk_id %analyzerWinId%
+		WinWaitClose, ahk_id %analyzerWinId%,, 30
+		if (ErrorLevel) {
+			MsgBox, Timed out waiting for Analyzer to close. Exiting ...
+			ExitApp
+		}
+	}
 	
 	; Return true when it generated images
 	return true
