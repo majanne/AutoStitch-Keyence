@@ -1,15 +1,15 @@
 ## What the script does ##
 
-* Stitch image folders that contain a .gci file with Keyence BZ-X800 Analyzer and Wide Image Viewer software.
-* Generated output: The stitched acquisition in an uncompressed and compressed tif. 
-* Reduce image size by up to 50% with Fiji/ ImageJ via _Color, Stack to RGB_.
-* Add metric information (image width in microns) to the output image with Fiji/ ImageJ via _Analyze, Set Scale_.
+* Stitch image folders that contain a .gci file using Keyence BZ-X800 Analyzer and Wide Image Viewer software.
+* Output: The stitched acquisition in uncompressed and compressed tifs. 
+* Reduce image size by up to 50% using Fiji/ ImageJ, _Color, Stack to RGB_.
+* Add metric information (image width in microns) to the output image using Fiji/ ImageJ, _Analyze, Set Scale_.
 * Compress a copy of the raw image folders.
 
 ## Software requirements ##
 
 * [Autohotkey](https://www.autohotkey.com/) (Open source) 
-* [Keyence Analyzer Analysis Software](https://www.keyence.com/landing/microscope/lp_fluorescence.jsp) (Proprietory)
+* [Keyence Analyzer Analysis Software](https://www.keyence.com/landing/microscope/lp_fluorescence.jsp) (Proprietary)
 * [Fiji/ ImageJ](https://imagej.net/Fiji) (Open source)
 
 ## Acquisition conditions ##
@@ -28,7 +28,7 @@
 
 * The order of the channels defines the output name. The output of CH1 is generated first, in our setting that image name will be output_dapi.tif.
 * Channel dependent extensions and overlay: CH1, \_dapi; CH2, \_gfp; CH3, \_rfp; CH4, \_bf; Overlay, \_ovly
-* Uncompressed and compressed tif: _.tif_ and _\_small.tif_, respectively
+* Uncompressed and compressed tifs, _.tif_ and _\_small.tif_, respectively
 
 #### Multi-Point name handling #### 
 
