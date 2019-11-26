@@ -44,23 +44,11 @@ __This script allows the user to define slide names by using _#_.__
 ___Example:___
 myExperiment (myExp). Slide positions XY01-3 are used. Slide names (here: Cond1-3 or Exp1-3) can be specified individually if these names are preceeded by the _#_ symbol.
 
-__Script output:__
+__Script output for three imaged slides, example shown for slide 2:__
 
-__Input option 1.__ Common name __myExp__:
-1. myExp\_slide1
-2. myExp\_slide2
-3. myExp\_slide3
-
-__Input option 2.__ Common and slide names __myExp#Cond1#Cond2#Cond3__:
-1. myExp\_Cond1
-2. myExp\_Cond2
-3. myExp\_Cond3
-
-__Input option 3.__ Slide names __#myExp1#myExp2#myExp3__:
-1. myExp1
-2. myExp2
-3. myExp3
-
+__Input option 1.__ Common name __myExp__ given, output for slide 2: __myExp\_slide2__  
+__Input option 2.__ Common and slide names __myExp#Cond1#Cond2#Cond3__ given, output for slide 2: __myExp\_Cond2__  
+__Input option 3.__ Slide names __#myExp1#myExp2#myExp3__ given, output for slide 2: __myExp2__  
 __Error handling:__ If an unrecognized input name, e.g. the subfolder name _XY04_ appears, the slide name with Method 2 will be _myExp#Cond1#Cond2#Cond3\_XY04_.
 
 
