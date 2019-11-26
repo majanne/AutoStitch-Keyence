@@ -26,11 +26,11 @@
 
 ## File name handling ##
 
-* The order of the channels defines the output name. The output of CH1 is generated first, in our setting that image name will be output_dapi.tif.
+* The order of the channels during acquisition defines the output name. The output of CH1 is generated first, in our setting that image name will be output_dapi.tif.
 * Channel dependent extensions and overlay: CH1, \_dapi; CH2, \_gfp; CH3, \_rfp; CH4, \_bf; Overlay, \_ovly
 * Uncompressed and compressed tifs, _.tif_ and _\_small.tif_, respectively
 
-#### Multi-Point name handling #### 
+### Multi-Point name handling ###
 
 The microscope allows the user to image up to three slides in one run (Multi-Point acquisition).
 When using Multi-Point acquisition, however, only one common name can be entered in the _Capture_-window (example: myExp).  
