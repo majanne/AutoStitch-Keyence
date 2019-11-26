@@ -9,7 +9,7 @@
 ## Software requirements ##
 
 * [Autohotkey](https://www.autohotkey.com/) (Open source) 
-* [Keyence Analyzer Analysis Software, incl. Stitching add-on](https://www.keyence.com/landing/microscope/lp_fluorescence.jsp) (Proprietary)
+* [Keyence Analyzer Analysis Software, incl. stitching add-on](https://www.keyence.com/landing/microscope/lp_fluorescence.jsp) (Proprietary)
 * [Fiji/ ImageJ](https://imagej.net/Fiji) (Open source)
 
 ## Acquisition conditions ##
