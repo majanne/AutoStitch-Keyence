@@ -33,7 +33,7 @@
 #### Multi-Point name handling #### 
 
 The Keyence Slide Scanning Microscope allows to image up to three slides in one run (Multi-Point acquisition).
-When using Multi-Point acquisition, the _Capture_-window allows to enter one name (_Example: myExp_) for all three slides.  
+When using Multi-Point acquisition, the _Capture_-window allows to enter one name (here: myExp) for all three slides.  
 The Analyzer output for three slides imaged in one run is the following:  
 A folder _myExp_ that contains up to three subfolders, _XY01_, _XY02_ , _XY03_. The names XY01-3 correspond to the positions of the slides in the slide holder.
 
