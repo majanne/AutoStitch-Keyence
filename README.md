@@ -33,11 +33,11 @@
 #### Multi-Point name handling #### 
 
 The Keyence Slide Scanning Microscope allows to image up to three slides in one run (Multi-Point acquisition).
-When using Multi-Point acquisition, the _Capture_-window allows to enter one name (_Example: myExp_) for all three slides. The acquisition output is then stored in subfolders named XY01, XY02, XY03 if three slides where imaged, XY01, XY02 for two slides.
+When using Multi-Point acquisition, the _Capture_-window allows to enter one name (_Example: myExp (myExperiment)_) for all three slides. The acquisition output is then stored in subfolders named XY01, XY02, XY03 if three slides where imaged, XY01, XY02 for two slides.
 
-The Analyzer output when three slides are imaged in one run:
+The Analyzer output, three slides are imaged in one run:
 
-Folder _myExp_ containing 3 subfolders, _XY01_, _XY02_ , _XY03_.
+The folder _myExp_ contains 3 subfolders, _XY01_, _XY02_ , _XY03_, which correspond to the slide positions.
 
 __This script allows the user to define slide names by using _#_.__  
 
@@ -46,17 +46,17 @@ myExperiment (myExp). Slide positions XY01-3 are used. Slide names (here: Cond1-
 
 __Script output:__
 
-__Method 1.__ Common name __myExp__:
+__Input option 1.__ Common name __myExp__:
 1. myExp\_slide1
 2. myExp\_slide2
 3. myExp\_slide3
 
-__Method 2.__ Common and slide names __myExp#Cond1#Cond2#Cond3__:
+__Input option 2.__ Common and slide names __myExp#Cond1#Cond2#Cond3__:
 1. myExp\_Cond1
 2. myExp\_Cond2
 3. myExp\_Cond3
 
-__Method 3.__ Slide names __#myExp1#myExp2#myExp3__:
+__Input option 3.__ Slide names __#myExp1#myExp2#myExp3__:
 1. myExp1
 2. myExp2
 3. myExp3
