@@ -44,11 +44,11 @@ Slide positions XY01-3 are used. Slide names can be specified individually if th
 
 __Script output for three imaged slides, example shown for slide 2:__
 
-__Input option 1.__ Common name __myExp__ given, output for slide 2: __myExp\_slide2__  
-__Input option 2.__ Common and slide names __myExp#Cond1#Cond2#Cond3__ given, output for slide 2: __myExp\_Cond2__  
-__Input option 3.__ Slide names __#Apples#Pears#Oranges__ given, output for slide 2: __Pears__  
+__Input option 1.__ Common name entered, __myExp__. Output for slide 2: __myExp\_slide2__  
+__Input option 2.__ Common and slide names entered __myExp#Cond1#Cond2#Cond3__. Output for slide 2: __myExp\_Cond2__  
+__Input option 3.__ Slide names entered __#Apples#Pears#Oranges__. Output for slide 2: __Pears__  
 
-__Error handling:__ If an unrecognized input name, e.g. the subfolder name _XY04_ appears, the output name generated with Input option 2 would be _myExp#Cond1#Cond2#Cond3\_XY04_.
+__Error handling:__ If an unrecognized input name, e.g. the subfolder name _XY04_ appears, the output name generated with _Input option 2_ would be _myExp#Cond1#Cond2#Cond3\_XY04_.
 
 
 
