@@ -33,23 +33,22 @@
 #### Multi-Point name handling #### 
 
 The Keyence Slide Scanning Microscope allows to image up to three slides in one run (Multi-Point acquisition).
-When using Multi-Point acquisition, the _Capture_-window allows to enter one name (_Example: myExp (myExperiment)_) for all three slides. The acquisition output is then stored in subfolders named XY01, XY02, XY03 if three slides where imaged, XY01, XY02 for two slides.
+When using Multi-Point acquisition, the _Capture_-window allows to enter one name (_Example: myExp_) for all three slides.  
+The Analyzer output for three slides imaged in one run is the following:  
+A folder _myExp_ that contains up to three subfolders, _XY01_, _XY02_ , _XY03_. The names XY01-3 correspond to the positions of the slides in the slide holder.
 
-The Analyzer output, three slides are imaged in one run:
-
-The folder _myExp_ contains 3 subfolders, _XY01_, _XY02_ , _XY03_, which correspond to the slide positions.
-
-__This script allows the user to define slide names by using _#_.__  
+__This script allows the user to define up to three slide names by using _#_.__  
 
 ___Example:___
-myExperiment (myExp). Slide positions XY01-3 are used. Slide names (here: Cond1-3 or Exp1-3) can be specified individually if these names are preceeded by the _#_ symbol.
+Slide positions XY01-3 are used. Slide names can be specified individually if these names are preceeded by the _#_ symbol.
 
 __Script output for three imaged slides, example shown for slide 2:__
 
 __Input option 1.__ Common name __myExp__ given, output for slide 2: __myExp\_slide2__  
 __Input option 2.__ Common and slide names __myExp#Cond1#Cond2#Cond3__ given, output for slide 2: __myExp\_Cond2__  
-__Input option 3.__ Slide names __#myExp1#myExp2#myExp3__ given, output for slide 2: __myExp2__  
-__Error handling:__ If an unrecognized input name, e.g. the subfolder name _XY04_ appears, the slide name with Method 2 will be _myExp#Cond1#Cond2#Cond3\_XY04_.
+__Input option 3.__ Slide names __#Apples#Pears#Oranges__ given, output for slide 2: __Pears__  
+
+__Error handling:__ If an unrecognized input name, e.g. the subfolder name _XY04_ appears, the output name generated with Input option 2 would be _myExp#Cond1#Cond2#Cond3\_XY04_.
 
 
 
