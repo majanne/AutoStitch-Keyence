@@ -33,7 +33,7 @@
 ### Multi-Point name handling ###
 
 The microscope allows the user to image up to three slides in one run (Multi-Point acquisition).
-When using Multi-Point acquisition, however, only one common name can be entered in the _Capture_-window (example: myExp).  
+When using Multi-Point acquisition, however, only one common name can be entered in the Capture-window (example: myExp).  
 The Analyzer output for three slides that are imaged together is the following:  
 A folder _myExp_ that contains up to three subfolders, _XY01_, _XY02_, _XY03_. The names XY01-3 correspond to the position of the slides in the slide holder.
 
@@ -49,6 +49,15 @@ __Input option 2.__ Common and slide names entered, __myExp#Cond1#Cond2#Cond3__.
 __Input option 3.__ Slide names entered, __#Apples#Pears#Oranges__. Output for slide 2: __Pears__  
 
 __Error handling:__ If an unrecognized input name, e.g. the subfolder name _XY04_ appears, the output name generated with _Input option 2_ would be _myExp#Cond1#Cond2#Cond3\_XY04_.
+
+## Preparations for script use ##
+
+To stitch images with this script the Keyence BZ-X800 Analyzer software needs to be installed, including the locally plugged USB dongle that enables Keyence's stitching add-on. If the installation is for some reason incomplete, the _Load a Group_ button will not respond and stitching is not possible. 
+Autohotkey and Fiji/ ImageJ need to be installed.
+
+Proposed set up: 
+*On your server, in the Tools folder, create the folder auto-stitch and paste the ....
+*Create a folder on the Desktop named _AutoStitch Information_. Enter there the xxx file and the short README file for the user.
 
 
 
