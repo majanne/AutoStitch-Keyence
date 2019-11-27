@@ -2,7 +2,7 @@
 
 * Stitch image folders that contain a .gci file using Keyence BZ-X800 Analyzer and Wide Image Viewer software.
 * Output: The stitched acquisition in uncompressed and compressed tifs. 
-* Reduce image size by up to 50% using Fiji/ ImageJ, _Color, Stack to RGB_.
+* Reduce image size by up to 50% using Fiji/ ImageJ, _Image, Color, Stack to RGB_.
 * Add metric information (image width in microns) to the output image using Fiji/ ImageJ, _Analyze, Set Scale_.
 * Compress a copy of the raw image folders.
 
