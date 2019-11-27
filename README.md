@@ -55,9 +55,12 @@ __Error handling:__ If an unrecognized input name, e.g. the subfolder name _XY04
 To stitch images with this script the Keyence BZ-X800 Analyzer software needs to be installed, including the locally plugged USB dongle that enables Keyence's stitching add-on. If the installation is for some reason incomplete, the _Load a Group_ button will not respond and stitching is not possible. 
 Autohotkey and Fiji/ ImageJ need to be installed.
 
-Proposed set up: 
-*On your server, in the Tools folder, create the folder auto-stitch and paste the ....
-*Create a folder on the Desktop named _AutoStitch Information_. Enter there the xxx file and the short README file for the user.
+### Proposed set up ###  
+* On your server, in the Tools folder, create the folder auto-stitch and paste the ....  
+* Create a folder on the Desktop named _AutoStitch Information_. Place here the xxx file and the short README file for the user.
+
+### Running the script ###
+* Follow the instructions in the README file in the folder _AutoStitch Information_ on your Desktop. 
 
 
 
