@@ -64,11 +64,11 @@ To stitch images with this script the Keyence BZ-X800 Analyzer software needs to
 Autohotkey and Fiji/ ImageJ need to be installed.
 
 ### Proposed set up ###  
-* On your server, in the Tools folder, create the folder auto-stitch and paste the ....  
-* Create a folder on the Desktop named _AutoStitch Information_. Place here the xxx file and the short README file for the user.
+* On your server, in the Tools folder, create the folder auto-stitch and paste the current script.  
+* Create a folder on the Desktop named __AutoStitch Information__. Insert a copy of the content of __run-instructions__.
 
 ### Running the script ###
-* Follow the instructions in the README file in the folder _AutoStitch Information_ on your Desktop. 
+* Follow the instructions of the __README__ file in the folder __AutoStitch Information__ on your Desktop. 
 
 
 
