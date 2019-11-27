@@ -46,7 +46,15 @@ __Script output for three imaged slides, example shown for slide 2:__
 
 __Input option 1.__ Common name entered, __myExp__. Output for slide 2: __myExp\_slide2__  
 __Input option 2.__ Common and slide names entered, __myExp#Cond1#Cond2#Cond3__. Output for slide 2: __myExp\_Cond2__  
-__Input option 3.__ Slide names entered, __#Apples#Pears#Oranges__. Output for slide 2: __Pears__  
+__Input option 3.__ Slide names entered, __#Apples#Pears#Oranges__. Output for slide 2: __Pears__   
+
+An example for the entire output for slide 2 (XY02) using Input option 2, acquired with CH2 (here: GFP) and CH4 (here: Brightfield):  
+1. Uncompressed overlay: __myExp\_Cond2\_ovly.tif__
+2. Uncompressed brightfield: __myExp\_Cond2\_bf.tif__
+3. Uncompressed gfp: __myExp\_Cond2\_gfp.tif__
+4. Compressed overlay: __myExp\_Cond2\_ovly\_small.tif__
+5. Compressed brightfield: __myExp\_Cond2\_bf\_small.tif__
+6. Compressed gfp: __myExp\_Cond2\_gfp\_small.tif__
 
 __Error handling:__ If an unrecognized input name, e.g. the subfolder name _XY04_ appears, the output name generated with _Input option 2_ would be _myExp#Cond1#Cond2#Cond3\_XY04_.
 
