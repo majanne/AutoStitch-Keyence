@@ -60,9 +60,9 @@ getDefaultOptions() {
 	
 	; Binaries
 	options["scriptDir"] := STITCH_BASE_DIR
-	options["keyenceAnalyzer"] := "C:\Program Files\Keyence\BZ-X800\Analyzer\BZ-X800_Analyzer.exe"
-	options["imageJ"] := A_MyDocuments "\fiji-imageJ\Fiji.app\ImageJ-win64.exe"
-	options["gzip"] := "C:\Program Files\7-Zip\7zg.exe"
+	options["keyenceAnalyzer"] := "<PATH_TO_BZ-X800_Analyzer.exe>"
+	options["imageJ"] := "<PATH_TO_ImageJ.exe>"
+	options["gzip"] := "<PATH_TO_7zg.exe>"
 	
 	; Constants
 	options["metaBanner"] := "------- Auto Stitch Information -------"
