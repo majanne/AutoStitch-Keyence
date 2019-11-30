@@ -66,7 +66,8 @@ Autohotkey, Fiji/ ImageJ, and 7-zip need to be installed.
 
 ### Set up ###
 
-* Download this script.* Create the folder auto-stitch and insert the current script, server installation, e.g. in a Tools folder is possible.
+* Download this script. 
+* Create the folder auto-stitch and insert the current script, server installation, e.g. in a Tools folder is possible. 
 * In __ahkStitch.ahk__, modify:
     * __Line 9__: The path to your __auto-stitch__ install directory
     * __Line 63__: The path to __BZ-X800 Analyzer.exe__
@@ -75,7 +76,7 @@ Autohotkey, Fiji/ ImageJ, and 7-zip need to be installed.
 * In __run-instructions.ahk__, modify:
     * __Line 3__: The path to __ahkStitch.ahk__
 
-* Create a folder on the Desktop named __AutoStitch Information__. Insert a copy of the content of __run-instructions__.
+* Create the folder __AutoStitch Information__ on your Desktop. Insert a copy of the content of __run-instructions__.
 
 ## Using the script ##
 * Follow the instructions of the __README__ file in the folder __AutoStitch Information__ on your Desktop. 
