@@ -73,10 +73,9 @@ Autohotkey, Fiji/ ImageJ, and 7-zip need to be installed.
     * __Line 63__: The path to __BZ-X800 Analyzer.exe__
     * __Line 64__: The path to __ImageJ.exe__
     * __Line 65__: The path to __7zg.exe__
+* Create the folder __AutoStitch Information__ on your Desktop. Insert the content of __run-instructions__.
 * In __run-instructions.ahk__, adjust:
     * __Line 3__: The path to __ahkStitch.ahk__
-
-* Create the folder __AutoStitch Information__ on your Desktop. Insert a copy of the content of __run-instructions__.
 
 ## Using the script ##
 * Follow the instructions of the __README__ file in the folder __AutoStitch Information__ on your Desktop. 
