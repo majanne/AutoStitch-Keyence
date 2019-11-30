@@ -1,7 +1,7 @@
 ;;; Constant header
 #NoEnv
-#include \\pbiob-centos.salk.edu\groot-data\Tools\auto-stitch\ahkStitch.ahk
-
+#include <PATH_TO_INSTALL_DIR>\ahkStitch.ahk
+ 
 
 ;;; Options
 options := getDefaultOptions()
