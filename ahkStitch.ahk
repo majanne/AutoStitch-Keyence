@@ -3,10 +3,10 @@
 ;SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 ;SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 global STITCH_BASE_DIR
-STITCH_BASE_DIR := "\\pbiob-centos.salk.edu\groot-data\Tools\auto-stitch"
+STITCH_BASE_DIR := "<PATH_TO_INSTALL_DIR>"
 
 ; Includes cannot contain variables. Using the hardcoded install path here.
-#include \\pbiob-centos.salk.edu\groot-data\Tools\auto-stitch
+#include <PATH_TO_INSTALL_DIR>
 #include include\utils.ahk
 #include include\runStitching.ahk
 #include include\runPost.ahk
