@@ -66,14 +66,14 @@ Autohotkey, Fiji/ ImageJ, and 7-zip need to be installed.
 
 ### Set up ###
 
-* Download this script. 
+* Download this script.
 * Create the folder auto-stitch and insert the current script, server installation, e.g. in a Tools folder is possible. 
-* In __ahkStitch.ahk__, modify:
+* In __ahkStitch.ahk__, adjust:
     * __Line 9__: The path to your __auto-stitch__ install directory
     * __Line 63__: The path to __BZ-X800 Analyzer.exe__
     * __Line 64__: The path to __ImageJ.exe__
     * __Line 65__: The path to __7zg.exe__
-* In __run-instructions.ahk__, modify:
+* In __run-instructions.ahk__, adjust:
     * __Line 3__: The path to __ahkStitch.ahk__
 
 * Create the folder __AutoStitch Information__ on your Desktop. Insert a copy of the content of __run-instructions__.
