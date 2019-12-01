@@ -8,7 +8,7 @@
 
 ## Software requirements ##
 
-* [Autohotkey](https://www.autohotkey.com/) (Open source) 
+* [Autohotkey version 1.x](https://www.autohotkey.com/) (Open source) 
 * [Keyence Analyzer Analysis Software, incl. stitching add-on](https://www.keyence.com/landing/microscope/lp_fluorescence.jsp) (Proprietary)
 * [Fiji/ ImageJ](https://imagej.net/Fiji) (Open source)
 * [7-zip](https://www.7-zip.org/download.html) (Freeware)
@@ -59,26 +59,32 @@ An example for the entire output for slide 2 (XY02) using Input option 2, acquir
 
 __Error handling:__ If an unrecognized input name, e.g. the subfolder name _XY04_ appears, the output name generated with _Input option 2_ would be _myExp#Cond1#Cond2#Cond3\_XY04_.
 
-## Preparations for script use ##
+## Installation ##
 
 To stitch images with this script the Keyence BZ-X800 Analyzer software needs to be installed, including the locally plugged USB dongle that enables Keyence's stitching add-on. If the installation is for some reason incomplete, the _Load a Group_ button will not respond and stitching is not possible. 
 Autohotkey, Fiji/ ImageJ, and 7-zip need to be installed.
 
 ### Set up ###
 
-* Download this script.
-* Create the folder auto-stitch and insert the current script, server installation, e.g. in a Tools folder is possible.
-* In __ahkStitch.ahk__, adjust:
-    * __Line 9__: The path to your __auto-stitch__ install directory
-    * __Line 63__: The path to __BZ-X800 Analyzer.exe__
-    * __Line 64__: The path to __ImageJ.exe__
-    * __Line 65__: The path to __7zg.exe__
-* Create the folder __AutoStitch Information__ on your Desktop. Insert the content of __run-instructions__.
-* In __run-instructions.ahk__, adjust:
-    * __Line 3__: The path to __ahkStitch.ahk__
-
+* Download this script and save it to a folder. This will be your installation folder, for example:
+```
+C:\Tools\AutoStitch-Keyence\
+```
+* Edit __ahkStitch.ahk__, set the path to the installation folder (lines 6 and 9) and to the external programs (lines 63, 64 and 65):
+```
+6   STITCH_BASE_DIR := "C:\Tools\AutoStitch-Keyence\"
+9   #include C:\Tools\AutoStitch-Keyence
+...
+63	    options["keyenceAnalyzer"] := "C:\Program Files\Keyence\BZ-X800\Analyzer\BZ-X800_Analyzer.exe"
+64	    options["imageJ"] := "C:\Program Files\fiji-imageJ\Fiji.app\ImageJ-win64.exe"
+65	    options["gzip"] := "C:\Program Files\7-Zip\7zg.exe"
+```
+* Edit __run-instructions\runStitch.ahk__,set the path to the installation folder (line 3):
+```
+3   #include C:\Tools\AutoStitch-Keyence\ahkStitch.ahk
+```
 ## Using the script ##
-* Follow the instructions of the __README__ file in the folder __AutoStitch Information__ on your Desktop. 
+* Copy __run-instructions__ on your Desktop so that users can easily access the instructions and copy/paste the runStitch.ahk file into the folders to be processed.
 
 
 
