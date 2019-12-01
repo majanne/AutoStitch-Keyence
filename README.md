@@ -84,7 +84,7 @@ C:\Tools\AutoStitch-Keyence\
 3   #include C:\Tools\AutoStitch-Keyence\ahkStitch.ahk
 ```
 ## Using the script ##
-* Copy the folder __run-instructions__ on your Desktop and follow the instructions of the README.txt file.
+* Copy the folder __run-instructions__ on your Desktop and follow the instructions of the included README.txt file.
 
 
 
