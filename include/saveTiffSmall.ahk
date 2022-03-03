@@ -23,9 +23,8 @@ saveTiffSmall(outputDirName, currentName, channel, topWinId)
 	saveWinId := WinExist("A")
 
 	;Sequence to send filename
-	ControlFocus, Edit1, ahk_id %saveWinId%,
+	Send %outputFile%
 	Sleep 500
-	ControlSetText, Edit1, %outputFile%, ahk_id %saveWinId%, 
 
 	; Clicking Save
 	ControlFocus, Button2, ahk_id %saveWinId%,
